@@ -1,9 +1,22 @@
+
 <html>
-  <head>
-  </head>
-  <body>
-    <p>Hello world</p>
-    <script src="http://match.adsrvr.org/track/rid?v=1.0.0&ttd_pid=casale"
-      type=javascript />
-  </body>
+    <head>
+    </head>
+    <body>
+        <p>Hello world</p>
+        <!-- attempt #1, from docs - needs OpenId declared? -->
+        <!-- doesn't set cookies <script src="http://match.adsrvr.org/track/rid?v=1.0.0&ttd_pid=casale"
+            type=javascript /> -->
+
+        <!-- attempt #2 from http://rasmussencollegescedustg.collegiseducation.com/ -->
+        <script type="text/javascript"
+            id="">
+            var xhr = new XMLHttpRequest;
+            xhr.onload = function () { 200 <= xhr.status && 300 > xhr.status ? (window.dataLayer = window.dataLayer || [], window.dataLayer.push({ event: "tdidAvailable", TDID: JSON.parse(xhr.responseText).TDID, TDID_CREATED_AT: JSON.parse(xhr.responseText).TDID_CREATED_AT, TDID_LOOKUP: JSON.parse(xhr.responseText).TDID_LOOKUP })) : (window.dataLayer = window.dataLayer || [], window.dataLayer.push({ event: "tdidNOTAvailable" })) };
+            xhr.open("GET", "https://match.adsrvr.org/track/rid?ttd_pid\x3dk0d3ch3\x26fmt\x3djson");
+            xhr.send();
+        </script>
+      
+    </body>
 </html>
+  
