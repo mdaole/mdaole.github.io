@@ -4,10 +4,13 @@
     </head>
     <body>
         <p>Hello world</p>
+        
         <!-- attempt #1, from docs - needs OpenId declared? -->
+        <!--
         <script src="http://match.adsrvr.org/track/rid?v=1.0.0&ttd_pid=casale"></script>
+        -->
 
-        <!-- attempt #2 from http://rasmussencollegescedustg.collegiseducation.com/ -->
+        <!-- attempt #2 from http://rasmussencollegescedustg.collegiseducation.com/ (doesn't set cookies) --> 
         <!--
         <script type="text/javascript"
             id="">
@@ -19,7 +22,7 @@
         -->
 
         <!-- attempt #3 add withCredentials to #2 -->
-        <!-- 
+        
         <script type="text/javascript"
             id="">
             var xhr = new XMLHttpRequest;
@@ -28,7 +31,7 @@
             xhr.withCredentials = true;
             xhr.send();
         </script>
-        -->
+        
 
     </body>
 </html>
